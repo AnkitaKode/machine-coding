@@ -1,9 +1,8 @@
-// Abstraction (Interface)
 interface Database {
     void save(String data);
 }
 
-// MySQL implementation (Low-level module)
+// MySQL implementation LLD
 class MySQLDatabase implements Database {
     @Override
     public void save(String data) {
@@ -14,7 +13,7 @@ class MySQLDatabase implements Database {
     }
 }
 
-// MongoDB implementation (Low-level module)
+// MongoDB implementation LLD
 class MongoDBDatabase implements Database {
     @Override
     public void save(String data) {
@@ -25,7 +24,7 @@ class MongoDBDatabase implements Database {
     }
 }
 
-// High-level module (Now loosely coupled via Dependency Injection)
+// HLD : Here is  loosely coupled via Dependency Injection
 class UserService {
     private final Database db;
 
